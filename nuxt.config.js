@@ -23,7 +23,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap"
+          "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       }
     ]
   },
@@ -38,7 +38,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: "@/plugins/vue-swiper", ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
