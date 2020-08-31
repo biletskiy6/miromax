@@ -47,37 +47,45 @@
               <ul class="schedule-proposals">
                 <li class="schedule-proposals__item">
                   <a class="schedule-proposals__link" href="#">
-                    <h4 class="schedule-proposals__time">
-                      11:50
-                      <small>- 11:43</small>
-                    </h4>
-                    <h5 class="schedule-proposals__type">2D</h5>
-
-                    <div class="schedule-proposals__action">
-                      80
-                      <small>грн</small>
-                    </div>
-                    <div class="schedule-proposals__action lux">
-                      <span>LUX</span> 170
-                      <small>грн</small>
+                    <h4 class="schedule-proposals__time">11:50</h4>
+                    <!-- <h5 class="schedule-proposals__type">2D</h5> -->
+                    <div class="schedule-dates">
+                      <div class="schedule-proposals__action schedule-proposals__action--default">
+                        <img src="icons/good.svg" alt />
+                        <h4>
+                          80
+                          <small>грн</small>
+                        </h4>
+                      </div>
+                      <div class="schedule-proposals__action schedule-proposals__action--luxt">
+                        <img src="icons/lux.svg" alt />
+                        <h4>
+                          110
+                          <small>грн</small>
+                        </h4>
+                      </div>
                     </div>
                   </a>
                 </li>
                 <li class="schedule-proposals__item">
                   <a class="schedule-proposals__link" href="#">
-                    <h4 class="schedule-proposals__time">
-                      11:50
-                      <small>- 11:43</small>
-                    </h4>
-                    <h5 class="schedule-proposals__type">2D</h5>
-
-                    <div class="schedule-proposals__action">
-                      80
-                      <small>грн</small>
-                    </div>
-                    <div class="schedule-proposals__action lux">
-                      <span>LUX</span> 170
-                      <small>грн</small>
+                    <h4 class="schedule-proposals__time">11:50</h4>
+                    <!-- <h5 class="schedule-proposals__type">2D</h5> -->
+                    <div class="schedule-dates">
+                      <div class="schedule-proposals__action schedule-proposals__action--default">
+                        <img src="icons/good.svg" alt />
+                        <h4>
+                          80
+                          <small>грн</small>
+                        </h4>
+                      </div>
+                      <div class="schedule-proposals__action schedule-proposals__action--luxt">
+                        <img src="icons/lux.svg" alt />
+                        <h4>
+                          110
+                          <small>грн</small>
+                        </h4>
+                      </div>
                     </div>
                   </a>
                 </li>
@@ -88,21 +96,34 @@
             <swiper-slide>Slide 4</swiper-slide>
             <swiper-slide>Slide 5</swiper-slide>
             <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-            <div class="pagination" slot="pagination">
-              <h5 class="pagination-title">Наступні сеанси</h5>
-              <div class="prev" slot="button-prev">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <g class="a">
-                    <path class="b" d="M0,0H24V24H0Z" />
-                    <path class="c" d="M21,11H6.83l3.58-3.59L9,6,3,12l6,6,1.41-1.41L6.83,13H21Z" />
-                  </g>
-                </svg>
-              </div>
-              <div class="next" slot="button-next">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <path class="a" d="M24,0H0V24H24Z" />
-                  <path class="b" d="M3,11H17.17L13.59,7.41,15,6l6,6-6,6-1.41-1.41L17.17,13H3Z" />
-                </svg>
+            <div class="movies-pagination" slot="pagination">
+              <h5 class="movies-pagination__title">Наступні сеанси</h5>
+
+              <div class="movies-pagination__nav">
+                <div class="prev" slot="button-prev">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g class="a">
+                      <path class="b" d="M0,0H24V24H0Z" />
+                      <path class="c" d="M21,11H6.83l3.58-3.59L9,6,3,12l6,6,1.41-1.41L6.83,13H21Z" />
+                    </g>
+                  </svg>
+                </div>
+                <div class="next" slot="button-next">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path class="a" d="M24,0H0V24H24Z" />
+                    <path class="b" d="M3,11H17.17L13.59,7.41,15,6l6,6-6,6-1.41-1.41L17.17,13H3Z" />
+                  </svg>
+                </div>
               </div>
             </div>
           </swiper>
