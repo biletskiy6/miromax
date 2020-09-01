@@ -3,7 +3,6 @@
     <AppHeader
       @handleOpenSessionSchedule="handleOpenSessionSchedule"
       @handleOpenPickMovie="handleOpenPickMovie"
-
     />
     <SessionSchedule @handleCloseSessionSchedule="handleCloseSessionSchedule" :showSessionSchedule="showSessionSchedule"/>
     <PickMovie @handleClosePickMovie="handleClosePickMovie" :pickMovie="pickMovie"/>
@@ -22,7 +21,6 @@ export default {
   data: () => ({
     showSessionSchedule: false,
     pickMovie: false,
-
   }),
   methods: {
     handleOpenSessionSchedule() {
