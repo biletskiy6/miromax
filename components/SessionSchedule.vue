@@ -63,7 +63,7 @@
       </ul>
 
       <ul class="session-schedule-films">
-        <li class="session-schedule-film">
+        <li v-for="item in 20" class="session-schedule-film">
           <div class="session-schedule-default session-schedule-film__time">
             <h4>11:50</h4>
             <small>Зал 1</small>
@@ -104,47 +104,7 @@
           </div>
 
         </li>
-        <li class="session-schedule-film">
-          <div class="session-schedule-default session-schedule-film__time">
-            <h4>11:50</h4>
-            <small>Зал 1</small>
-          </div>
-          <div class="session-schedule-film__title">
-            <h4>Месники: Завершення</h4>
-            <div class="movie-genre movie-session-schedule">
-              <ul>
-                <li>16+</li>
-                <li class="genre">Бойовик, Пригоди, Фантастика</li>
-              </ul>
-            </div>
-          </div>
 
-
-          <div class="session-schedule-default session-schedule-film__price">
-            <h4>
-              <img src="icons/good.svg" alt="">
-              <span>128 <small>грн</small></span>
-            </h4>
-            <p>Купити квиток</p>
-          </div>
-          <div class="session-schedule-default session-schedule-film__price">
-            <h4>
-              <img src="icons/lux.svg" alt="">
-              <span>128 <small>грн</small></span>
-            </h4>
-            <p>Купити квиток</p>
-          </div>
-
-          <div class="session-schedule-default session-schedule-film__forward">
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path class="a" d="M0,0H24V24H0Z"/>
-                <path class="b" d="M20,11H7.83l5.59-5.59L12,4,4,12l8,8,1.41-1.41L7.83,13H20Z"/>
-              </svg>
-            </a>
-          </div>
-
-        </li>
       </ul>
 
     </div>

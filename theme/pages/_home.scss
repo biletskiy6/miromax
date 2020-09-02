@@ -363,6 +363,13 @@ button {
       background-position: center center;
       background-repeat: no-repeat;
       border-radius: 12px;
+
+      &:hover {
+        .movie-description {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
 
     &__action {
@@ -381,7 +388,7 @@ button {
         opacity: 0;
         visibility: hidden;
         border-radius: 12px;
-        bottom: 25px;
+        bottom: 0px;
         width: 100%;
         display: flex;
         // flex-direction: column;
@@ -443,15 +450,11 @@ button {
 
       }
 
-      &:hover {
-        // transition: opacity .35s ease;
-
-        .movie-description {
-          opacity: 1;
-          visibility: visible;
-          transition: all .35s ease;
-        }
-      }
+      //&:hover {
+      //  // transition: opacity .35s ease;
+      //
+      //
+      //}
 
     }
 

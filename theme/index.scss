@@ -28,11 +28,38 @@ body {
 }
 
 button {
+  cursor: pointer;
   &:focus {
     outline: none;
   }
 }
-
+.button {
+  background: transparent linear-gradient(98deg, #CE58E7 0%, #52BADB 100%) 0% 0% no-repeat padding-box;
+  border-radius: 28px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  padding: 18px 5px;
+  transition: box-shadow .35s ease;
+  &:hover {
+    box-shadow: 0px 8px 24px #0000003D;
+    transition: box-shadow .35s ease;
+  }
+  &--create {
+    background: #fff;
+    color: $accent-color;
+    box-shadow: 0px 16px 24px #0000673D;
+  }
+  &--default-shadow {
+    box-shadow: 0px 8px 24px #0000003D;
+  }
+}
+.d-flex {
+  display: flex;
+}
 .translate-fade-down-enter-active,
 .translate-fade-down-leave-active {
   transition: all 250ms;

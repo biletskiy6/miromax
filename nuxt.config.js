@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 export default {
   mode: "universal",
   /*
@@ -41,6 +43,7 @@ export default {
   plugins: [
     { src: "@/plugins/vue-swiper", ssr: false },
     { src: "@/plugins/perfect-scrollbar", ssr: false },
+    { src: "@/plugins/vue-countdown", ssr: false },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -65,6 +68,13 @@ export default {
    ** Build configuration
    */
   build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        // global modules
+
+        _: 'lodash'
+      })
+    ],
     /*
      ** You can extend webpack config here
      */

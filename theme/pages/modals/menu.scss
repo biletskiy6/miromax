@@ -9,13 +9,76 @@
   z-index: 100;
   transform: translateY(-100%);
   transition-timing-function: cubic-bezier(.19,1,.22,1);
-
-  &-content {
-    background: #fff;
-    height: 80%;
-    //height: 747px;
+  transition: transform .8s cubic-bezier(.77,0,.175,1);
+  //padding-top: 15px;
+  //padding-left: 24px;
+  //padding-bottom: 100px;
+  &.active {
+    transform: translateY(0);
+    transition: transform .8s cubic-bezier(.77,0,.175,1);
+  }
+  //
+  //&-content {
+  //  background: #fff;
+  //
+  //  //height: 747px;
+  //}
+  &-middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 75%;
+    height: 100%;
+  }
+  &-phone {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 7px;
+      .a {
+        fill: none;
+      }
+      .b {
+        fill: $accent-color;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+      font-size: 17px;
+      font-weight: 600;
+      transition: all .25s ease;
+      &:hover {
+        color: $accent;
+        transition: all .25s ease;
+      }
+    }
   }
 }
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  &__item {
+    margin-bottom: 32px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: #000;
+    font-size: 34px;
+    font-weight: 700;
+    transition: color .35s ease;
+    &:hover {
+      color: $accent;
+      transition: color .35s ease;
+    }
+
+  }
+}
+
 .menu-close {
   svg {
     .a {
@@ -36,12 +99,23 @@
   display: flex;
   //border-left-bottom-radius: 24px;
   border-bottom-left-radius: 24px;
+  height: 80%;
+  background: #fff;
   border-bottom-right-radius: 24px;
   //border-radius: 0px 0px 24px 0px;
   .main-menu__left {
+    display: flex;
+    flex-direction: column;
     flex: 4;
-    padding-top: 15px;
-    padding-left: 24px;
+    padding-left: 30px;
+    //padding-top: 15px;
+    //padding-left: 24px;
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 30px;
+      padding-top: 18px;
+    }
 
   }
   .main-menu__right {
@@ -91,11 +165,30 @@
   }
 }
 .menu-socials {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  &-top {
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+  }
   h6 {
     font-size: 13px;
     font-weight: 400;
     margin-bottom: 30px;
   }
+
+  .copyright {
+    margin-top: auto;
+    padding-bottom: 32px;
+    font-size: 13px;
+  }
+
   ul {
     list-style-type: none;
     margin: 0;

@@ -3,43 +3,45 @@
     <div class="movies-wrapper">
       <div v-for="item in 8" class="movie">
         <nuxt-link to="movies/slug" href="#" class="movie__action">
-          <div style="background-image:url('movies/1.jpg')" class="movie-image"></div>
-          <div class="movie-description">
-            <div class="movie-description__item movie-description__trailer">
-              <a href="#">
+          <div style="background-image:url('movies/1.jpg')" class="movie-image">
+            <div class="movie-description">
+              <div class="movie-description__item movie-description__trailer">
+                <a href="#">
               <span>
                 <img src="icons/play.svg" alt="Info"/>
               </span>
-                <h6>
-                  Дивитись
-                  <br/>Трейлер
-                </h6>
-              </a>
-            </div>
-            <div class="movie-description__item movie-description__info">
-              <a href="#">
+                  <h6>
+                    Дивитись
+                    <br/>Трейлер
+                  </h6>
+                </a>
+              </div>
+              <div class="movie-description__item movie-description__info">
+                <a href="#">
               <span>
                 <img src="icons/info.svg" alt="Info"/>
               </span>
-                <h6>
-                  Детальніше
-                  <br/>про фільм
-                </h6>
-              </a>
-            </div>
-            <div class="movie-description__item movie-description__info">
-              <a href="#">
+                  <h6>
+                    Детальніше
+                    <br/>про фільм
+                  </h6>
+                </a>
+              </div>
+              <div class="movie-description__item movie-description__info">
+                <a href="#">
               <span>
                 <img src="icons/info.svg" alt="Info"/>
               </span>
-                <h6>
-                  Додати до
-                  <br/>фаворитів
-                </h6>
-              </a>
-            </div>
+                  <h6>
+                    Додати до
+                    <br/>фаворитів
+                  </h6>
+                </a>
+              </div>
 
+            </div>
           </div>
+
         </nuxt-link>
         <div class="movie__content">
           <h2>В очікуванні варварів</h2>

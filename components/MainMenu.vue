@@ -1,72 +1,86 @@
 <template>
-  <div class="main-menu">
-    <div class="main-menu-content">
+  <div @click="handleCloseMenu" class="main-menu" :class="{ active: menu }">
+    <div @click.stop="" class="main-menu-content">
       <div class="main-menu__left">
-        <div class="app-header__left">
-          <button class="menu-close">
+        <div class="main-menu__left-wrapper">
+          <div class="app-header__left">
+            <button class="menu-close" @click="handleCloseMenu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                <path class="a" d="M0,0H40V40H0Z"/>
+                <circle class="b" cx="20" cy="20" r="20"/>
+                <circle class="c" cx="1" cy="1" r="1" transform="translate(19 19)"/>
+                <rect class="d" width="24" height="3" rx="1.5" transform="translate(10 26.971) rotate(-45)"/>
+                <rect class="d" width="3" height="3" rx="1.5" transform="translate(17.999 18)"/>
+                <rect class="d" width="24" height="3" rx="1.5" transform="translate(12.121 10) rotate(45)"/>
+              </svg>
+            </button>
+
+            <a href="#" class="logo">
+              <img src="logo.svg" alt="Miromax Logo"/>
+            </a>
+            <dropdown-menu
+              v-model="showLocations"
+              :right="right"
+              :hover="hover"
+              :interactive="interactive"
+              transition="translate-fade-down"
+            >
+              <div class="btn btn-primary dropdown-toggle">
+                <svg class="location" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path class="a" d="M0,0H24V24H0Z"/>
+                  <path
+                    class="b"
+                    d="M12,2A7,7,0,0,0,5,9c0,5.25,7,13,7,13s7-7.75,7-13A7,7,0,0,0,12,2ZM7,9A5,5,0,0,1,17,9c0,2.88-2.88,7.19-5,9.88C9.92,16.21,7,11.85,7,9Z"
+                  />
+                  <circle class="b" cx="2.5" cy="2.5" r="2.5" transform="translate(9.5 6.5)"/>
+                </svg>
+                <h4 class="dropdown__header">Київ, ТРЦ Аладдин</h4>
+                <button>
+                  <div class="expand-arrow">
+                    <svg id="baseline-expand_more-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24">
+                      <path id="Контур_2002" data-name="Контур 2002" d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z"
+                            fill="#000067"/>
+                      <path id="Контур_2003" data-name="Контур 2003" d="M0,0H24V24H0Z" fill="none"/>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div slot="dropdown">
+                <div class="dropdown-menu-list">
+                  <div class="dropdown-item">
+                    <a class="dropdown-link" href="#">Action</a>
+                  </div>
+                  <div class="dropdown-item">
+                    <a class="dropdown-link" href="#">Action</a>
+                  </div>
+                  <div class="dropdown-item">
+                    <a class="dropdown-link" href="#">Action</a>
+                  </div>
+
+                </div>
+              </div>
+            </dropdown-menu>
+          </div>
+          <div class="main-menu-phone">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
               <path class="a" d="M0,0H40V40H0Z"/>
-              <circle class="b" cx="20" cy="20" r="20"/>
-              <circle class="c" cx="1" cy="1" r="1" transform="translate(19 19)"/>
-              <rect class="d" width="24" height="3" rx="1.5" transform="translate(10 26.971) rotate(-45)"/>
-              <rect class="d" width="3" height="3" rx="1.5" transform="translate(17.999 18)"/>
-              <rect class="d" width="24" height="3" rx="1.5" transform="translate(12.121 10) rotate(45)"/>
+              <path class="b"
+                    d="M-1029-3568h-14a5.006,5.006,0,0,1-5-5v-26a5.006,5.006,0,0,1,5-5h14a5.006,5.006,0,0,1,5,5v26A5.006,5.006,0,0,1-1029-3568Zm-13-32a2,2,0,0,0-2,2v24a2,2,0,0,0,2,2h12a2,2,0,0,0,2-2v-24a2,2,0,0,0-2-2Z"
+                    transform="translate(1056 3606)"/>
+              <rect class="b" width="4" height="4" rx="2" transform="translate(18 26)"/>
             </svg>
-          </button>
-
-          <a href="#" class="logo">
-            <img src="logo.svg" alt="Miromax Logo"/>
-          </a>
-          <dropdown-menu
-            v-model="showLocations"
-            :right="right"
-            :hover="hover"
-            :interactive="interactive"
-            transition="translate-fade-down"
-          >
-            <div class="btn btn-primary dropdown-toggle">
-              <svg class="location" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path class="a" d="M0,0H24V24H0Z"/>
-                <path
-                  class="b"
-                  d="M12,2A7,7,0,0,0,5,9c0,5.25,7,13,7,13s7-7.75,7-13A7,7,0,0,0,12,2ZM7,9A5,5,0,0,1,17,9c0,2.88-2.88,7.19-5,9.88C9.92,16.21,7,11.85,7,9Z"
-                />
-                <circle class="b" cx="2.5" cy="2.5" r="2.5" transform="translate(9.5 6.5)"/>
-              </svg>
-              <h4 class="dropdown__header">Київ, ТРЦ Аладдин</h4>
-              <button>
-                <div class="expand-arrow">
-                  <svg id="baseline-expand_more-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                       viewBox="0 0 24 24">
-                    <path id="Контур_2002" data-name="Контур 2002" d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z"
-                          fill="#000067"/>
-                    <path id="Контур_2003" data-name="Контур 2003" d="M0,0H24V24H0Z" fill="none"/>
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div slot="dropdown">
-              <div class="dropdown-menu-list">
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="#">Action</a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="#">Action</a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="#">Action</a>
-                </div>
-
-              </div>
-            </div>
-          </dropdown-menu>
+            <a href="tel:380669999999">+38 (066) 999 9999</a>
+          </div>
         </div>
+
         <div class="main-menu-middle">
           <div class="menu-socials">
-            <h6>Ми в соціальних мережах</h6>
-            <ul>
-              <li>
-                <a href="#">
+            <div class="menu-socials-top">
+              <h6>Ми в соціальних мережах</h6>
+              <ul>
+                <li>
+                  <a href="#">
                   <span class="s-icon">
                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <g transform="translate(-1180 -471.874)">
@@ -77,11 +91,11 @@
                   </g>
                 </svg>
                 </span>
-                  <span>Facebook</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                    <span>Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
                   <span class="s-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <g transform="translate(-1210 -469.874)">
@@ -92,11 +106,11 @@
                     </g>
                   </svg>
                 </span>
-                  <span>Instagram</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                    <span>Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
                    <span class="s-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <g transform="translate(-1238 -469.874)">
@@ -107,11 +121,40 @@
                     </g>
                   </svg>
                 </span>
-                  <span>Youtube</span>
-                </a>
-              </li>
-            </ul>
+                    <span>Youtube</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="copyright">2020 Copyright miromax</p>
           </div>
+          <ul class="menu-list">
+            <li class="menu-list__item">
+              <a class="menu-list__link" href="#">
+                Розклад сеансів
+              </a>
+            </li>
+            <li class="menu-list__item">
+              <a class="menu-list__link" href="#">
+                Мій особистий кабінет
+              </a>
+            </li>
+            <li class="menu-list__item">
+              <a class="menu-list__link" href="#">
+                Про нас
+              </a>
+            </li>
+            <li class="menu-list__item">
+              <a class="menu-list__link" href="#">
+                Кінотеатри
+              </a>
+            </li>
+            <li class="menu-list__item">
+              <a class="menu-list__link" href="#">
+                Події та акції
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -139,12 +182,20 @@ import DropdownMenu from "@/components/DropdownMenu";
 
 export default {
   name: "MainMenu",
+  props: ['menu'],
   data: () => ({
     showLocations: false,
     right: false,
     hover: false,
     interactive: false
   }),
+
+  methods: {
+    handleCloseMenu() {
+      this.$emit('handleCloseMenu');
+    },
+  },
+
   components: {
     DropdownMenu
   }
