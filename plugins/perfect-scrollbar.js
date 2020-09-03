@@ -1,6 +1,5 @@
-import Vue from "vue";
+import Vue from 'vue';
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue';
 
-import PerfectScrollbar from 'vue2-perfect-scrollbar'
-import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
-
-Vue.use(PerfectScrollbar)
+// global registration
+Vue.component('overlay-scrollbars', OverlayScrollbarsComponent);

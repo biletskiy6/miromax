@@ -9,9 +9,9 @@
             <rect class="b" width="24" height="3" rx="1.5" transform="translate(8 10)"/>
           </svg>
         </button>
-        <a href="#" class="logo">
-          <img src="logo.svg" alt="Miromax Logo"/>
-        </a>
+        <nuxt-link to="/" class="logo">
+          <img src="/logo.svg" alt="Miromax Logo"/>
+        </nuxt-link>
         <dropdown-menu
           v-model="showLocations"
           :right="right"
@@ -57,7 +57,7 @@
         </dropdown-menu>
       </div>
     <div class="app-header__right">
-      <ul class="header-meta">
+      <ul v-if="type !== 'account'" class="header-meta">
         <li class="header-meta__item filters" @click="handlePickMovie">
           <button class="app-header-button">
             <svg class="header-meta__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -172,6 +172,21 @@
           </button>
         </li>
       </ul>
+
+      <ul v-else class="header-meta">
+        <li class="header-meta__item movie-session">
+          <button  class="movie-session app-header-button">
+            <svg class="header-meta__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                 viewBox="0 0 24 24">
+              <path class="a" d="M0,0H24V24H0Z"/>
+              <path class="b" d="M20,11H7.83l5.59-5.59L12,4,4,12l8,8,1.41-1.41L7.83,13H20Z"/>
+            </svg>
+          </button>
+          <h6>Повернутись назад</h6>
+        </li>
+      </ul>
+
+
     </div>
   </header>
 </template>
@@ -180,6 +195,7 @@
 import DropdownMenu from "@/components/DropdownMenu";
 
 export default {
+  props: ['type'],
   data: () => ({
     showLocations: false,
     movieDates: false,

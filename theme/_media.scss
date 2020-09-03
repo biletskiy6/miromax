@@ -1,0 +1,290 @@
+@media screen and (max-width: 1400px) {
+  .main-menu-content {
+    .app-header__left {
+      flex: 1;
+    }
+
+    .main-menu__left {
+      flex: 2.5;
+    }
+
+    .main-menu__phone {
+      flex: 1;
+    }
+  }
+  .main-menu-middle {
+    max-width: 100%;
+    padding-right: 15px;
+  }
+  .menu-list {
+    &__link {
+      font-size: 30px;
+    }
+  }
+  .app-header {
+    flex-direction: column;
+
+    &__left {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &__right {
+      .type-schedule {
+        display: none;
+      }
+    }
+
+    .dropdown {
+      margin-left: auto;
+    }
+  }
+  .movies {
+    .movie {
+      width: calc(100% - 40px);
+
+      &__action {
+        left: 0;
+      }
+    }
+  }
+  .pick-movie-content {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .pick-movie-wrapper {
+    flex-direction: column;
+  }
+  .pick-movie-rest {
+    margin-top: 40px;
+  }
+
+  .session-schedule {
+    &-list {
+      flex-wrap: wrap;
+    }
+    &-content {
+      padding-right: 0px;
+      flex: 0 1 80%;
+    }
+
+    &__top {
+      flex-direction: column;
+    }
+
+    &__header {
+      margin-bottom: 15px;
+    }
+
+    &-close {
+      top: 50px;
+      z-index: 1;
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 1100px) {
+  .main-menu-middle {
+    flex-direction: column;
+
+    .menu-list {
+      order: -1;
+      width: 100%;
+      padding: 0px 0 0px 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      &__item {
+        margin-bottom: 25px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &__link {
+        font-size: 32px;
+      }
+    }
+  }
+  .main-menu-content .main-menu__left-wrapper {
+    flex-direction: column;
+  }
+  .main-menu-content .main-menu__left {
+    flex: 1.8;
+  }
+  .menu-socials {
+    &-top {
+      padding-bottom: 20px;
+
+      h6 {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+
+        li {
+          margin-bottom: 0;
+          margin-right: 15px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .copyright {
+      padding-bottom: 10px;
+    }
+  }
+
+  .pick-movie-content {
+    max-width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .pick-movie-buttons {
+    padding-right: 0;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .main-menu-content .main-menu__left-wrapper {
+    //flex-direction: row;
+    //flex-wrap: wrap;
+  }
+  .main-menu-content .main-menu__right {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  //.app-header {
+  //  flex-direction: column;
+  //  &__left {
+  //    width: 100%;
+  //    margin-bottom: 10px;
+  //  }
+  //  &__right {
+  //    .type-schedule {
+  //      display: none;
+  //    }
+  //  }
+  //  .dropdown {
+  //    margin-left: auto;
+  //  }
+  //}
+  .movies {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .movie {
+      flex-direction: column;
+
+      &-image {
+        height: 100%;
+      }
+
+      &__action {
+        margin-right: 0;
+      }
+
+      &__content {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        h2, .movie-genre {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  //.app-header {
+  //  flex-direction: column;
+  //  &__left {
+  //    width: 100%;
+  //    margin-bottom: 10px;
+  //  }
+  //  &__right {
+  //    .type-schedule {
+  //      display: none;
+  //    }
+  //  }
+  //  .dropdown {
+  //    margin-left: auto;
+  //  }
+  //}
+
+  .header-meta {
+    &__item {
+      h6 {
+        display: none;
+      }
+    }
+  }
+  .menu-socials-top ul {
+    flex-direction: column;
+
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .main-menu-middle .menu-list {
+    &__link {
+      font-size: 26px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .app-header {
+    &__left {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        margin-left: 0;
+        margin-right: 0;
+
+        img {
+          display: inline-block;
+          margin: 5px 0;
+          width: 60px;
+        }
+
+      }
+
+      .dropdown {
+        margin-left: initial;
+      }
+
+    }
+  }
+
+}
+
+//
+//@media screen and (max-width: 1100px) {
+//  * {
+//    display: none;
+//  }
+//}

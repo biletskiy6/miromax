@@ -8,12 +8,14 @@
       <div class="cinema-seats">
         <div v-for="(row, rowIndex) in hallSeats" class="cinema-row">
           <div class="cinema-row-index cinema-row-index--start"> {{ rowIndex + 1 }}</div>
-          <div @click="handleSeatClick(seat, rowIndex + 1, seatIndex + 1, row.rowId)"
-               :key="seat.seatId"
+          <div
+              @click="handleSeatClick(seat, rowIndex + 1, seatIndex + 1, row.rowId)"
+              @mouseover="handleMouseOver"
+              :key="seat.seatId"
                :class="{ [seat.seatType]: seat.seatType, free: seat.isFree,  taken: !seat.isFree, selected: seat.selected } "
                v-for="(seat, seatIndex) in row.rowSeats" class="cinema-seat">
 
-            <div  v-if="seat.isFree && seat.seatType === 'good' || seat.seatType === 'lux'" class="seat-tooltip"
+            <div v-if="seat.isFree && seat.seatType === 'good' || seat.seatType === 'lux'" class="seat-tooltip"
                  :class="{[seat.seatType]: seat.seatType}">
               <div class="seat-tooltip-left">
                 <p class="seat-tooltip-row">{{ rowIndex + 1 }} ряд</p>
@@ -117,6 +119,9 @@
 export default {
   name: "index",
   layout: 'order',
+  data: () => ({
+    tooltip: false,
+  }),
 
   beforeMount() {
     this.$store.commit('setActiveBreadcrumb', 'seats')
@@ -152,6 +157,9 @@ export default {
       }
 
     },
+    handleMouseOver() {
+      // alert(1)
+    }
 
   },
 

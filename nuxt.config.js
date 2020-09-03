@@ -32,7 +32,10 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  // loading: { color: "#fff" },
+
+  // loading: '@/components/Loading.vue',
+
   /*
    ** Global CSS
    */
@@ -44,6 +47,8 @@ export default {
     { src: "@/plugins/vue-swiper", ssr: false },
     { src: "@/plugins/perfect-scrollbar", ssr: false },
     { src: "@/plugins/vue-countdown", ssr: false },
+    { src: "@/plugins/youtube-embed", ssr: false },
+    { src: "@/plugins/qrcode", ssr: false },
   ],
   /*
    ** Nuxt.js dev-modules

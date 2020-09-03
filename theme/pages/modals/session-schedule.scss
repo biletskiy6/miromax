@@ -7,6 +7,7 @@
   top: 0;
   left: 0;
   transform: translateX(100%);
+  overflow: hidden;
   height: 100%;
   background: transparent linear-gradient(90deg, #FFFFFF00 0%, #FFFFFFC7 15%, #FFFFFFE0 100%) 0% 0% no-repeat padding-box;
   transition: transform .8s cubic-bezier(.77,0,.175,1);

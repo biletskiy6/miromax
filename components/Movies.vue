@@ -1,11 +1,30 @@
 <template>
   <div class="movies">
+    <transition name="fade">
+      <section v-if="embedYoutube" class="embed-youtube">
+        <div class="embed-top-panel">
+          <button @click="handleCloseEmbed" class="pick-movie-close" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path class="a"
+                    d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/>
+              <path class="b" d="M0,0H24V24H0Z"/>
+            </svg>
+          </button>
+        </div>
+        <youtube :video-id="videoId" player-width="100%" player-height="100%" :player-vars="{autoplay: 0}">
+
+        </youtube>
+      </section>
+    </transition>
+
+
+
     <div class="movies-wrapper">
       <div v-for="item in 8" class="movie">
         <nuxt-link to="movies/slug" href="#" class="movie__action">
           <div style="background-image:url('movies/1.jpg')" class="movie-image">
             <div class="movie-description">
-              <div class="movie-description__item movie-description__trailer">
+              <div @click.stop="handleVideoTrailer" class="movie-description__item movie-description__trailer">
                 <a href="#">
               <span>
                 <img src="icons/play.svg" alt="Info"/>
@@ -59,7 +78,7 @@
             <swiper ref="mySwiper" :options="swiperOptions">
               <swiper-slide>
                 <ul class="schedule-proposals">
-                  <li class="schedule-proposals__item">
+                  <li v-for="item in 3" class="schedule-proposals__item">
                     <nuxt-link to="/movies/movie-slug/seat-id" class="schedule-proposals__link" href="#">
                       <h4 class="schedule-proposals__time">11:50</h4>
                       <!-- <h5 class="schedule-proposals__type">2D</h5> -->
@@ -228,14 +247,31 @@ export default {
           nextEl: ".next",
           prevEl: ".prev",
         },
+
         // Some Swiper option/callback...
       },
+      videoId: '4kE13IQeHgA',
+      embedYoutube: false,
     };
   },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
     },
+  },
+  methods: {
+    ready (event) {
+      this.player = event.target
+    },
+    playing (event) {
+      // The player is playing a video.
+    },
+    handleVideoTrailer() {
+      this.embedYoutube = true;
+    },
+    handleCloseEmbed() {
+      this.embedYoutube = false;
+    }
   },
   components: {
     Swiper,
