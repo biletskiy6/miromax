@@ -30,5 +30,7 @@
     "vue-youtube-embed": "^2.2.2",
     "vue2-perfect-scrollbar": "^1.5.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "pretty-checkbox-vue": "^1.1.9"
+  }
 }

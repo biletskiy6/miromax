@@ -11,8 +11,8 @@
     </p>
 
     <div class="auth-buttons">
-      <button class="button button--default-shadow">Увійти</button>
-      <button class="button button--create">Створити аккаунт</button>
+      <button @click="$emit('showAuth')" class="button button--default-shadow">Увійти</button>
+      <button @click="$emit('showRegister')" class="button button--create">Створити аккаунт</button>
     </div>
   </div>
 

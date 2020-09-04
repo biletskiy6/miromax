@@ -3,7 +3,7 @@
   justify-content: flex-end;
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 102;
   top: 0;
   left: 0;
   transform: translateX(100%);
@@ -276,7 +276,9 @@
       box-shadow: 0px 4px 16px #00000014;
       transition: all .25s ease;
 
-
+      .session-schedule-film__time h4, .session-schedule-film__title h4 {
+        color: $accent;
+      }
       .session-schedule-film__forward a {
         background: $accent;
         transition: all .25s ease;

@@ -17,6 +17,12 @@ export default {
     showSessionSchedule: false,
     pickMovie: false,
   }),
+  beforeMount() {
+    document.body.classList.add('homepage');
+  },
+  beforeDestroy() {
+    document.body.classList.remove('homepage');
+  },
   methods: {
     handleOpenSessionSchedule() {
      this.showSessionSchedule = true;

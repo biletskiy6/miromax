@@ -49,6 +49,7 @@ export default {
     { src: "@/plugins/vue-countdown", ssr: false },
     { src: "@/plugins/youtube-embed", ssr: false },
     { src: "@/plugins/qrcode", ssr: false },
+    { src: "@/plugins/checkbox" },
   ],
   /*
    ** Nuxt.js dev-modules

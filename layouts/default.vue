@@ -5,12 +5,13 @@
       @handleOpenSessionSchedule="handleOpenSessionSchedule"
       @handleOpenPickMovie="handleOpenPickMovie"
       @handleOpenMenu="handleOpenMenu"
+      @handleOpenAuth="handleOpenAuth"
 
     />
     <SessionSchedule @handleCloseSessionSchedule="handleCloseSessionSchedule" :showSessionSchedule="showSessionSchedule"/>
     <PickMovie @handleClosePickMovie="handleClosePickMovie" :pickMovie="pickMovie"/>
     <MainMenu  @handleCloseMenu="handleCloseMenu" :menu="menu"/>
-<!--    <Auth/>-->
+    <Auth @handleAuthClose="handleAuthClose" :auth="auth"/>
     <nuxt />
   </div>
 </template>
@@ -29,7 +30,8 @@ export default {
     showSessionSchedule: false,
     pickMovie: false,
     menu: false,
-    loading: false
+    auth: false,
+    loading: false,
   }),
 
   beforeUpdate() {
@@ -70,6 +72,13 @@ export default {
     handleCloseMenu() {
       this.menu = false;
     },
+    handleOpenAuth() {
+      this.auth = true;
+    },
+    handleAuthClose() {
+      this.auth = false;
+
+    }
 
   },
   components: {

@@ -2,6 +2,7 @@ export const state = () => ({
 
   // activeElement: {},
   error: null,
+  isSingleMoviePage: false,
   breadcrumbs: [
     { title: 'Місця', active: false, type: 'seats' },
     { title: 'Підтвердження', active: false, type: 'confirm' },
@@ -21,6 +22,14 @@ export const mutations = {
     const breadcrumb = state.breadcrumbs.find(b => b.type === type);
     breadcrumb.active = true;
   },
+
+  setSingleMoviePage(state) {
+    state.isSingleMoviePage = true;
+  },
+  removeSingleMoviePage(state) {
+    state.isSingleMoviePage = false;
+  },
+
   setError(state, error) {
     state.error = error;
   },
@@ -31,5 +40,6 @@ export const mutations = {
 
 export const getters = {
   error: state => state.error,
-  breadcrumbs: state => state.breadcrumbs
+  breadcrumbs: state => state.breadcrumbs,
+  isSingleMoviePage: state => state.isSingleMoviePage
 }

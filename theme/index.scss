@@ -60,6 +60,12 @@ button {
 .d-flex {
   display: flex;
 }
+.jcsb {
+  justify-content: space-between;
+}
+.jc-end {
+  justify-content: flex-end;
+}
 .translate-fade-down-enter-active,
 .translate-fade-down-leave-active {
   transition: all 250ms;

@@ -3,6 +3,14 @@
   height: calc(100vh - 104px);
   overflow: hidden;
   padding-left: 15px;
+  &-left {
+    flex: 0.9;
+  }
+
+  &-right {
+    display: flex;
+    flex: 3;
+  }
 
   &-desc {
     flex: 3;
@@ -13,8 +21,10 @@
     justify-content: space-between;
     padding-right: 30px;
 
-    margin-top: 50px;
+    //margin-top: 50px;
     margin-bottom: 30px;
+    min-height: 100px;
+    align-items: flex-end;
 
 
     h4 {
@@ -118,20 +128,26 @@
     height: 100%;
   }
   &-image {
-    flex: 0 1 440px;
+    //flex: 0 1 440px;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     max-height: 650px;
+    border-radius: 24px;
   }
   &-about {
-    flex: 1;
+    flex: 1.9;
     padding: 0 40px;
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    .single-top {
+      padding-right: 0;
     }
 
 

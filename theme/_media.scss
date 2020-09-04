@@ -153,7 +153,44 @@
     padding-right: 0;
   }
 
+  .session-schedule-content {
+    flex: 0 1 100%;
+  }
+  .session-schedule-films {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .session-schedule-list {
+    justify-content: center;
+  }
+
 }
+
+@media screen and (max-width: 992px) {
+  .session-schedule-list {
+    display: none;
+  }
+  .session-schedule-films {
+    align-items: flex-start;
+    padding-right: 15px;
+  }
+  .session-schedule-film {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .session-schedule-film__forward {
+    display: none;
+  }
+  .movie-session-schedule ul {
+    flex-direction: column;
+    li.genre {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+}
+
 
 @media screen and (max-width: 900px) {
   .main-menu-content .main-menu__left-wrapper {
@@ -167,6 +204,25 @@
 
 
 @media screen and (max-width: 767px) {
+  .session-schedule-film {
+    flex-direction: column;
+  }
+  .session-schedule-film__time, .session-schedule-film__title, .session-schedule-film__price, .session-schedule-film__title {
+    padding-left: 0;
+    border-right: none;
+  }
+  .movie-session-schedule ul {
+    flex-direction: row;
+  }
+  .session-schedule-film__price p {
+    display: none;
+  }
+  .movie-session-schedule {
+    margin: 15px 0;
+  }
+  .session-schedule__top {
+    padding-right: 76px;
+  }
   //.app-header {
   //  flex-direction: column;
   //  &__left {

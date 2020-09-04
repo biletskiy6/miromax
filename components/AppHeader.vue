@@ -1,61 +1,62 @@
 <template>
-  <header class="app-header">
-      <div class="app-header__left">
-        <button class="menu-toggle" @click="handleOpenMenu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-            <path class="a" d="M0,0H40V40H0Z"/>
-            <rect class="b" width="24" height="3" rx="1.5" transform="translate(8 18.5)"/>
-            <rect class="b" width="24" height="3" rx="1.5" transform="translate(8 27)"/>
-            <rect class="b" width="24" height="3" rx="1.5" transform="translate(8 10)"/>
-          </svg>
-        </button>
-        <nuxt-link to="/" class="logo">
-          <img src="/logo.svg" alt="Miromax Logo"/>
-        </nuxt-link>
-        <dropdown-menu
-          v-model="showLocations"
-          :right="right"
-          :hover="hover"
-          :interactive="interactive"
-          transition="translate-fade-down"
-        >
-          <div class="btn btn-primary dropdown-toggle">
-            <svg class="location" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <path class="a" d="M0,0H24V24H0Z"/>
-              <path
-                class="b"
-                d="M12,2A7,7,0,0,0,5,9c0,5.25,7,13,7,13s7-7.75,7-13A7,7,0,0,0,12,2ZM7,9A5,5,0,0,1,17,9c0,2.88-2.88,7.19-5,9.88C9.92,16.21,7,11.85,7,9Z"
-              />
-              <circle class="b" cx="2.5" cy="2.5" r="2.5" transform="translate(9.5 6.5)"/>
-            </svg>
-            <h4 class="dropdown__header">Київ, ТРЦ Аладдин</h4>
-            <button>
-              <div class="expand-arrow">
-                <svg id="baseline-expand_more-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                     viewBox="0 0 24 24">
-                  <path id="Контур_2002" data-name="Контур 2002" d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z"
-                        fill="#000067"/>
-                  <path id="Контур_2003" data-name="Контур 2003" d="M0,0H24V24H0Z" fill="none"/>
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div slot="dropdown">
-            <div class="dropdown-menu-list">
-              <div class="dropdown-item">
-                <a class="dropdown-link" href="#">Action</a>
-              </div>
-              <div class="dropdown-item">
-                <a class="dropdown-link" href="#">Action</a>
-              </div>
-              <div class="dropdown-item">
-                <a class="dropdown-link" href="#">Action</a>
-              </div>
+  <header class="app-header" :class="{'app-header--pinned': scrolled, 'app-header--hide': hide, 'single-movie': isSingleMoviePage}" @scroll="handleScroll">
+    <div class="app-header__left">
+      <button class="menu-toggle" @click="handleOpenMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+          <path class="a" d="M0,0H40V40H0Z"/>
+          <rect class="b" width="24" height="3" rx="1.5" transform="translate(8 18.5)"/>
+          <rect class="b" width="24" height="3" rx="1.5" transform="translate(8 27)"/>
+          <rect class="b" width="24" height="3" rx="1.5" transform="translate(8 10)"/>
+        </svg>
+      </button>
 
+      <nuxt-link to="/" class="logo">
+        <img src="/logo.svg" alt="Miromax Logo"/>
+      </nuxt-link>
+      <dropdown-menu
+        v-model="showLocations"
+        :right="right"
+        :hover="hover"
+        :interactive="interactive"
+        transition="translate-fade-down"
+      >
+        <div class="btn btn-primary dropdown-toggle">
+          <svg class="location" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+            <path class="a" d="M0,0H24V24H0Z"/>
+            <path
+              class="b"
+              d="M12,2A7,7,0,0,0,5,9c0,5.25,7,13,7,13s7-7.75,7-13A7,7,0,0,0,12,2ZM7,9A5,5,0,0,1,17,9c0,2.88-2.88,7.19-5,9.88C9.92,16.21,7,11.85,7,9Z"
+            />
+            <circle class="b" cx="2.5" cy="2.5" r="2.5" transform="translate(9.5 6.5)"/>
+          </svg>
+          <h4 class="dropdown__header">Київ, ТРЦ Аладдин</h4>
+          <button>
+            <div class="expand-arrow">
+              <svg id="baseline-expand_more-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                   viewBox="0 0 24 24">
+                <path id="Контур_2002" data-name="Контур 2002" d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z"
+                      fill="#000067"/>
+                <path id="Контур_2003" data-name="Контур 2003" d="M0,0H24V24H0Z" fill="none"/>
+              </svg>
             </div>
+          </button>
+        </div>
+        <div slot="dropdown">
+          <div class="dropdown-menu-list">
+            <div class="dropdown-item">
+              <a class="dropdown-link" href="#">Action</a>
+            </div>
+            <div class="dropdown-item">
+              <a class="dropdown-link" href="#">Action</a>
+            </div>
+            <div class="dropdown-item">
+              <a class="dropdown-link" href="#">Action</a>
+            </div>
+
           </div>
-        </dropdown-menu>
-      </div>
+        </div>
+      </dropdown-menu>
+    </div>
     <div class="app-header__right">
       <ul v-if="type !== 'account'" class="header-meta">
         <li class="header-meta__item filters" @click="handlePickMovie">
@@ -149,7 +150,7 @@
           <h6>Розклад: 99 Сеансів</h6>
         </li>
 
-        <li class="header-meta__item user-profile">
+        <li @click="$emit('handleOpenAuth')" class="header-meta__item user-profile">
           <h6>Увійти</h6>
           <button>
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
@@ -175,7 +176,7 @@
 
       <ul v-else class="header-meta">
         <li class="header-meta__item movie-session">
-          <button  class="movie-session app-header-button">
+          <button class="movie-session app-header-button">
             <svg class="header-meta__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                  viewBox="0 0 24 24">
               <path class="a" d="M0,0H24V24H0Z"/>
@@ -197,13 +198,59 @@ import DropdownMenu from "@/components/DropdownMenu";
 export default {
   props: ['type'],
   data: () => ({
+    lastScrollTop: 0,
+    limitPosition: 0,
     showLocations: false,
     movieDates: false,
     right: false,
     hover: false,
     interactive: false,
+    scrolled: false,
+    hide: false,
   }),
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  computed: {
+    isSingleMoviePage() {
+      return this.$store.getters['isSingleMoviePage'];
+    },
+  },
   methods: {
+    handleScroll() {
+
+      const st = window.scrollY;
+      // console.log(window);
+      console.log(st);
+      // console.log("LT:", this.lastScrollTop);
+      if (st > 0) {
+        this.scrolled = true;
+        // this.hide = true;
+        // console.log(st);
+        // $('.header-top').removeClass('fixed').addClass('hide');
+      } else {
+        this.scrolled = false;
+        // this.hide = false;
+      }
+
+      // this.lastScrollTop = st;
+
+      // if (this.lastPosition < window.scrollY && this.limitPosition < window.scrollY) {
+      //   this.scrolled = true;
+      //   // move up!
+      // }
+      //
+      // if (this.lastPosition > window.scrollY) {
+      //   this.scrolled = false;
+      //   // move down
+      // }
+      //
+      // this.lastPosition = window.scrollY;
+      // this.scrolled = window.scrollY > 250;
+    },
     handleSessionSchedule() {
       this.$emit('handleOpenSessionSchedule');
     },
@@ -212,7 +259,7 @@ export default {
     },
     handleOpenMenu() {
       this.$emit('handleOpenMenu');
-    }
+    },
   },
   components: {
     DropdownMenu,

@@ -2,8 +2,10 @@
   <div class="movies">
     <transition name="fade">
       <section v-if="embedYoutube" class="embed-youtube">
-        <div class="embed-top-panel">
-          <button @click="handleCloseEmbed" class="pick-movie-close" >
+        <div v-if="readyState" class="embed-top-panel">
+          <h2>Трейлер: {{ trailerName }}</h2>
+
+          <button @click="handleCloseEmbed" class="pick-movie-close static" >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path class="a"
                     d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/>
@@ -11,9 +13,7 @@
             </svg>
           </button>
         </div>
-        <youtube :video-id="videoId" player-width="100%" player-height="100%" :player-vars="{autoplay: 0}">
-
-        </youtube>
+        <youtube @ready="ready" :video-id="videoId" player-width="100%" player-height="100%" :player-vars="{autoplay: 0}"></youtube>
       </section>
     </transition>
 
@@ -100,7 +100,7 @@
                       </div>
                     </nuxt-link>
                   </li>
-                  <li class="schedule-proposals__item">
+                  <li class="schedule-proposals__item col-4">
                     <a class="schedule-proposals__link" href="#">
 
                       <div class="schedule-proposals__3d">
@@ -251,6 +251,8 @@ export default {
         // Some Swiper option/callback...
       },
       videoId: '4kE13IQeHgA',
+      trailerName: 'Назва фільму',
+      readyState: false,
       embedYoutube: false,
     };
   },
@@ -261,7 +263,10 @@ export default {
   },
   methods: {
     ready (event) {
+
+      // this.embedYoutube = true;
       this.player = event.target
+      this.readyState = true;
     },
     playing (event) {
       // The player is playing a video.
@@ -271,6 +276,7 @@ export default {
     },
     handleCloseEmbed() {
       this.embedYoutube = false;
+      this.readyState = false;
     }
   },
   components: {
